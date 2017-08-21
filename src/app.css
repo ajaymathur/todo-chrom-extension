@@ -1,0 +1,66 @@
+body{
+    height: 600px;
+    width: 600px;
+    padding: 0;
+    margin: 0;
+    font-size: 1.1em;
+}
+header{
+    width: 100%;
+    background: #438eff;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    justify-content: space-around;
+    height: 50px;
+    width: 100%;
+    background: #ededed;
+    box-shadow: 0px -1px 20px 0px #484848;
+}
+footer .task-description{
+    width: 80%;
+    font-size: 1.1em;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+footer .task-description.error{
+    animation: shake .5s;
+}
+footer .add-button{
+    width: 20%;
+    font-size: 1.1em;
+    background: #438eff;
+    color: #ffffff;
+    border: none;
+}
+footer .error-message{
+    position: absolute;
+    height: 20px;
+    top: -50px;
+    color: #ff6b6b;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 25px;
+}
+@keyframes shake{
+    0%{
+        transform: scale(1,1)
+    }
+    50%{
+        transform: scale(1.1, 1.1);
+    }
+    100%{
+        transform: scale(1,1)
+    }
+}
+.height-full{
+    height: 100%;
+}
