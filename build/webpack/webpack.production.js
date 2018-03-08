@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve('./src') + '/app.js',
@@ -33,9 +34,14 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
+      filename: 'popup.html',
       template: './src/popup.html',
       hash: true
     }),
     new ExtractTextPlugin("styles.css"),
+    new CopyWebpackPlugin([
+      { from: './assets/icon*', to: '', flatten: true },
+      { from: './assets/manifest*', to: '', flatten: true }
+    ])
   ]
 }
